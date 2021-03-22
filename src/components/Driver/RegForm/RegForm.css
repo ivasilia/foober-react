@@ -1,0 +1,28 @@
+form {
+    text-align: center;
+    border: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    border-color: burlywood;
+    padding: 11px;
+  }
+
+  input {
+    background-color: burlywood;
+    box-shadow: inset 3px 4px 5px cadetblue;
+    border: solid;
+    border-width: 1px;
+    border-radius: 2px;
+    border-color: black;
+    padding: 6px;
+  }
+
+  label {
+      color: rgb(224, 209, 189);
+      font-size: 2vw;
+      margin-right: 7px;
+  }
+
+  .newline {
+    white-space: pre-line;
+  }
