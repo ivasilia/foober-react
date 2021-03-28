@@ -1,36 +1,45 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import { googleApiKey } from '../../common/constants'
-  
+import Marker from './Marker';
+
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
- 
+
 class GMap extends Component {
-  static defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33
-    },
-    zoom: 11
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      zoom: 11
+    }
   };
- 
+
+
+
   render() {
+    console.log(`Rendering point: ${this.props.center.lat} ${this.props.center.lng}`);
     return (
       // Important! Always set the container height explicitly
-      <div style={{ height: '100vh', width: '100%' }}>
+      <div style={{ height: '80vh', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyDHDbORUyOSxRBZj9flx736bV7mrqglhBM'}}
+          bootstrapURLKeys={{ key: googleApiKey }}
           defaultCenter={this.props.center}
-          defaultZoom={this.props.zoom}
+          defaultZoom={this.state.zoom}
         >
-          <AnyReactComponent
-            lat={59.955413}
-            lng={30.337844}
-            text="My Marker"
+          <Marker
+            lat={this.props.origin.lat}
+            lng={this.props.origin.lng}
+            text="Origin"
+          />
+          <Marker
+            lat={this.props.destination.lat}
+            lng={this.props.destination.lng}
+            text="Origin"
           />
         </GoogleMapReact>
       </div>
     );
   }
 }
- 
+
 export default GMap;

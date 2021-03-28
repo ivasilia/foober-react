@@ -22,7 +22,7 @@ class App extends Component {
           <Route path="/login" component={Driver} />
           <Route path="/driver" component={Driver} exact />
           <Route path="/driver/dashboard/:id" component={DriverDashboard} />
-          <Route path="/route/new" component={NewRoute} />
+          <Route path="/routes/new" component={NewRoute} />
           {/* <Route path="/passenger" component={Passenger} exact/>
           <Route path="/passenger/dashboard" component={Passenger} /> */}
         </Switch>

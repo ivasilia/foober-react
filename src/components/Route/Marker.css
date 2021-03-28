@@ -1,0 +1,7 @@
+.marker {
+    color: white;
+    background-color: crimson;
+    border: 1px solid white;
+    width: 15px;
+    border-radius: 100%;
+}
