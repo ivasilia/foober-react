@@ -1,5 +1,5 @@
 import './DriverDashboard.css';
-import constants from '../../common/constants';
+import { host } from '../../common/constants';
 import { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import Footer from '../Footer';
@@ -20,7 +20,7 @@ class DriverDashboard extends Component {
 
     componentDidMount() {
         console.log(`params.id received: ${this.props.match.params.id}`);
-        fetch(`${constants}/drivers/${this.props.match.params.id}`)
+        fetch(`${host}/drivers/${this.props.match.params.id}`)
             .then(res => res.json())
             .then(data => {
                 this.setState({ driver: data })
