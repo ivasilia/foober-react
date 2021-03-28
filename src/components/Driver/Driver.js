@@ -1,7 +1,7 @@
 import style from './Driver';
 import { Link } from 'react-router-dom';
 import Init from '../Init/Init';
-import RegForm from './RegForm';
+import RegForm from '../RegForm';
 
 const Driver = () => {
     return(

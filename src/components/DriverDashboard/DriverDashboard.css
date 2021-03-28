@@ -1,0 +1,53 @@
+/* @media only screen and (max-width: 800px) {
+    .dashboard section {
+      flex-direction: column;
+    }
+  } */
+
+.dashboard {
+    border: 1px solid moccasin;
+    padding: 12px;
+}
+
+.dashboard section {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  justify-content: center;
+}
+
+.dashboard h2 {
+    color:rgb(26, 48, 70);
+    font-weight: 400;
+    background-color: rgb(202, 178, 135);
+}
+
+ .dashboard p {
+    font-size: 14pt;
+    font-family: 'Courier New', Courier, monospace;
+    color: bisque;
+}
+
+
+.box {
+    margin-right: 20px;
+    border: 1px solid aquamarine;
+    background-color: rgb(67, 107, 167);
+    border-radius: 3px;
+    padding: 6px;
+    box-shadow: 5px 3px 3px rgb(18, 49, 97);
+}
+
+.box button {
+    font-size: 18px;
+    display: block;
+    margin-top: 15px;
+    background-color: rgb(202, 178, 135);
+    color: rgb(26, 48, 70)
+}
+
+.box span {
+    display: block;
+    color: bisque;
+    font-family: 'Courier New', Courier, monospace;
+}
