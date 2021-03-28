@@ -37,17 +37,15 @@ class Route extends Component {
         let lat = Number(geoPoint[0]);
         let lng = Number(geoPoint[1]);
 
-        this.setState({ count: this.state.count + 1 })
-        console.log(this.state.count);
+        this.setState({ count: this.state.count + 1 });
 
         if (this.state.count > 0) {
             this.setState({ destination: { lat: lat, lng: lng } });
             this.setState({ count: 0 });
-            console.log(this.state.destination.lat);
+            
 
         } else {
             this.setState({ origin: { lat: lat, lng: lng } });
-            console.log(this.state.origin.lat);
         }
     }
 
