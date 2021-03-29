@@ -2,6 +2,7 @@ import GMap from './Map';
 import './Route.css';
 import { Component } from 'react';
 import Marker from './Marker';
+import { host } from '../../common/constants';
 
 class Route extends Component {
 
@@ -42,11 +43,15 @@ class Route extends Component {
         if (this.state.count > 0) {
             this.setState({ destination: { lat: lat, lng: lng } });
             this.setState({ count: 0 });
-            
+            this.saveRoute();
 
         } else {
             this.setState({ origin: { lat: lat, lng: lng } });
         }
+    }
+
+    saveRoute() {
+        fetch(`${host}/routes/create`)
     }
 
 

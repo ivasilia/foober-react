@@ -9,21 +9,36 @@ class DriverDashboard extends Component {
         super(props);
         this.state = {
             driver: {
-                id: '',
-                name: '',
-                car: {},
-                passengers: []
+                id: 1,
+                name: '',  
+                model: '',
+                fuel: '',
+                consumption: 0
             },
             errors: [],
         }
     }
 
     componentDidMount() {
-        console.log(`params.id received: ${this.props.match.params.id}`);
-        fetch(`${host}/drivers/${this.props.match.params.id}`)
+        const driverId = this.props.match.params.id;
+        console.log(`params.id received: ${driverId}`);
+        console.log(`old driver id: ${this.state.driver.id}`)
+
+        fetch(`${host}/drivers/${driverId}`)
             .then(res => res.json())
+            // .then(data => console.log(data.id))
             .then(data => {
-                this.setState({ driver: data })
+                this.setState( prevState => {
+                    let driver = Object.assign({}, prevState.driver);
+                    console.log(`Data.id: ${data.name} and Driver.id: ${driver.name}`);
+                    driver.id = data.id;
+                    driver.name = data.name;
+                    driver.model = data.model;
+                    driver.fuel = data.fuel;
+                    driver.consumption = data.consumption;
+                    return driver;
+                })
+                // console.log(`data received when mounted: ${this.state.driver.name}`);
             })
             .catch(err =>
                 this.setState(err => this.state.errors.push(err))
@@ -33,16 +48,16 @@ class DriverDashboard extends Component {
 
 
     render() {
+        console.log(`data received when rendered: ${this.state.driver.name}`);
         return (
             <div className="dashboard">
                 <h2>Foober Driver's Dashboard</h2>
                 <section>
                     <div className="box">
-                        <p>Driver: {this.state.driver.name}</p>
-                        {/* <p>{this.state.driver.name}</p> */}
-                        <p>Vehicle: {this.state.driver.car.model}</p>
-                        <p>Fuel: {this.state.driver.car.fuel}</p>
-                        <p>Overall consumption: {this.state.driver.car.consumption}</p>
+                        <p>Driver: {this.state.name}</p>
+                        <p>Vehicle: {this.state.model}</p>
+                        <p>Fuel: {this.state.fuel}</p>
+                        <p>Overall consumption: {this.state.consumption}</p>
                     </div>
                     <div className="box">
                         <Link to="/routes/new"><button>Create new route</button></Link>
@@ -51,11 +66,11 @@ class DriverDashboard extends Component {
                     </div>
                     <div className="box">
                         <p>Your last passengers:</p>
-                        {
+                        {/* {
                             this.state.driver.passengers.map(p => {
                                 return <span>{p}</span>
                             })
-                        }
+                        } */}
                     </div>
                 </section>
                 <Footer />
