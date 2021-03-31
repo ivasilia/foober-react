@@ -10,20 +10,20 @@ class GMap extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      zoom: 11
+      zoom: 8
     }
   };
 
 
 
   render() {
-    console.log(`Rendering point: ${this.props.center.lat} ${this.props.center.lng}`);
+    // console.log(`Rendering point: ${this.props.origin.lat} ${this.props.center.lng}`);
     return (
       // Important! Always set the container height explicitly
       <div style={{ height: '80vh', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key: googleApiKey }}
-          defaultCenter={this.props.center}
+          defaultCenter={this.props.origin}
           defaultZoom={this.state.zoom}
         >
           <Marker

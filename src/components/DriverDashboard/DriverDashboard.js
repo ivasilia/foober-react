@@ -21,16 +21,12 @@ class DriverDashboard extends Component {
 
     componentDidMount() {
         const driverId = this.props.match.params.id;
-        console.log(`params.id received: ${driverId}`);
-        console.log(`old driver id: ${this.state.driver.id}`)
 
         fetch(`${host}/drivers/${driverId}`)
             .then(res => res.json())
-            // .then(data => console.log(data.id))
             .then(data => {
                 this.setState( prevState => {
                     let driver = Object.assign({}, prevState.driver);
-                    console.log(`Data.id: ${data.name} and Driver.id: ${driver.name}`);
                     driver.id = data.id;
                     driver.name = data.name;
                     driver.model = data.model;
@@ -38,7 +34,6 @@ class DriverDashboard extends Component {
                     driver.consumption = data.consumption;
                     return driver;
                 })
-                // console.log(`data received when mounted: ${this.state.driver.name}`);
             })
             .catch(err =>
                 this.setState(err => this.state.errors.push(err))
@@ -48,7 +43,6 @@ class DriverDashboard extends Component {
 
 
     render() {
-        console.log(`data received when rendered: ${this.state.driver.name}`);
         return (
             <div className="dashboard">
                 <h2>Foober Driver's Dashboard</h2>
