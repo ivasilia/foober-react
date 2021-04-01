@@ -5,15 +5,17 @@ import './Route.css';
 const AllRoutes = () => {
     const [ routes, setRoutes ] = useState([]);
 
-    useLayoutEffect(async () => {
+    useLayoutEffect(() => {
+        (async () => {
         const result = await fetch(`${host}/routes/all`)
         .then(res => res.json())
         .then(data => setRoutes(data))
         .catch(err => console.log(err)
         );
+        })();
     }, []);
 
-    // TODO ---- Fix history return with data
+    // TODO ---- Fix history return with data ----
 
     return (
         <div >
