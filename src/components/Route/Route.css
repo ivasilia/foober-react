@@ -5,6 +5,7 @@
 }
 
 .all-routes-wrapper {
+    margin: 9px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

@@ -5,6 +5,7 @@ import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import Landing from './components/Init/Landing';
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
+import About from './components/About';
 import Driver from './components/Driver';
 import DriverDashboard from './components/DriverDashboard';
 import Passenger from './components/Passenger';
@@ -26,6 +27,7 @@ class App extends Component {
         <Switch>
           <Route path="/" component={Landing} exact />
           <Route path="/login" component={Driver} />
+          <Route path="/about" component={About} />
           <Route path="/driver" component={Driver} exact />
           <Route path="/driver/dashboard/:id" component={DriverDashboard} />
           <Route path="/routes/new" component={SharedRoute} />   

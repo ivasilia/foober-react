@@ -1,0 +1,25 @@
+.about-container {
+    color: bisque;
+}
+
+.about-container p {
+    font-size: 26px;
+}
+
+.segment-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.segment {
+    display: block;
+    width: 250px;
+    border: 1px solid aquamarine;
+    margin: 1vw;
+    border-radius: 5px;
+    border-bottom-right-radius: 30px;
+}
+
