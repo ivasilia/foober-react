@@ -1,0 +1,10 @@
+.footer {
+    margin-top: 9vh;
+     background-color: rgb(37, 70, 119);
+}
+
+.footer p {
+    color: bisque;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12pt;
+}

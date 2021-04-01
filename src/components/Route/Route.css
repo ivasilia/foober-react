@@ -4,6 +4,31 @@
     background-color: bisque;
 }
 
+.all-routes-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid bisque;
+    border-radius: 5px;
+}
+
+.all-routes-wrapper p {
+    
+    margin-bottom: 5px;
+    color: bisque;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 3vh;
+}
+
+.list-item {
+    background-color: rgb(74, 116, 180);
+    border-radius: 5px;
+    padding: 3px;
+    width: 25vw;
+    color: rgb(199, 165, 124);
+}
+
+
 .btn {
     margin-left: 20px;
     margin-bottom: 10px;

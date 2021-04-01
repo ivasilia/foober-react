@@ -2,7 +2,7 @@ import './Footer.css';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className="footer">
             <p>Powered by Throwable</p>
             <p>Copyright &copy; Foober Sarl 2021</p>
         </footer>

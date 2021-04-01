@@ -2,7 +2,6 @@ import './DriverDashboard.css';
 import { host } from '../../common/constants';
 import { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import Footer from '../Footer';
 
 class DriverDashboard extends Component {
     constructor(props) {
@@ -67,7 +66,6 @@ class DriverDashboard extends Component {
                         } */}
                     </div>
                 </section>
-                <Footer />
             </div>
         );
     }

@@ -1,4 +1,6 @@
 .header {
+    margin-top: 10px;
+    margin-bottom: 9vh;
     list-style: none;
     padding: 1px;
     background-color: rgb(37, 70, 119);
@@ -8,6 +10,10 @@ li {
     display: inline;
     padding: 20px;
 }
+
+ li :hover {
+     background-color: rgb(81, 115, 165);
+ }
 
 a {
     color: aquamarine;
