@@ -5,8 +5,11 @@ import { Route, Link, NavLink, Switch } from 'react-router-dom';
 import Landing from './components/Init/Landing';
 import Driver from './components/Driver';
 import DriverDashboard from './components/DriverDashboard';
+import Passenger from './components/Passenger';
 import SharedRoute from './components/Route';
 import NewSharedRoute from './components/Route/NewSharedRoute';
+import AllRoutes from './components/Route/AllRoutes';
+import Header from './components/Header/Header';
 
 class App extends Component {
   constructor(props) {
@@ -18,16 +21,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <Header />
         <Switch>
           <Route path="/" component={Landing} exact />
           <Route path="/login" component={Driver} />
           <Route path="/driver" component={Driver} exact />
           <Route path="/driver/dashboard/:id" component={DriverDashboard} />
           <Route path="/routes/new" component={SharedRoute} />   
-          <Route path="/routes/test" component={NewSharedRoute} />                    
-          {/* <Route path="/routes/created" component={NewRoute} exact /> */}
-          {/* <Route path="/passenger" component={Passenger} exact/>
-          <Route path="/passenger/dashboard" component={Passenger} /> */}
+          <Route path="/routes/created" component={NewSharedRoute} />                    
+          <Route path="/routes/all" component={AllRoutes} exact />
+          <Route path="/passenger" component={Passenger} exact/>
+          <Route path="/passenger/dashboard" component={Passenger} />
         </Switch>
       </div>
     );

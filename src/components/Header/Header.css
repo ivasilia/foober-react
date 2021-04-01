@@ -1,0 +1,14 @@
+.header {
+    list-style: none;
+    padding: 1px;
+    background-color: rgb(37, 70, 119);
+}
+
+li {
+    display: inline;
+    padding: 20px;
+}
+
+a {
+    color: aquamarine;
+}

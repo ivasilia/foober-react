@@ -86,7 +86,7 @@ class SharedRoute extends Component {
             .then(data => this.setState({ distance: data / 10000 }));
         console.log(`state.distance: ${this.state.distance }`);
 
-        this.createRoute();
+        // this.createRoute();
         return distance;
     }
 
@@ -123,7 +123,7 @@ class SharedRoute extends Component {
                         })
                     }
                 </select>
-                        <Link to={{ pathname: "/routes/test",
+                        <Link to={{ pathname: "/routes/created",
                             origin: this.state.origin,
                             desination: this.state.destcity,
                             distance: this.state.distance,
