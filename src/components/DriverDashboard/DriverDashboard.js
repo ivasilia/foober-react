@@ -66,6 +66,7 @@ class DriverDashboard extends Component {
                         } */}
                     </div>
                 </section>
+                <h4>Estimated travel cost with -- passengers: </h4>
             </div>
         );
     }

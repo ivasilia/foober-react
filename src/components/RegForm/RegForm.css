@@ -1,6 +1,9 @@
 form {
+  margin: auto;
+    width: 400px;
     display: flex;
-    flex-direction: row;
+    text-align: right;
+    flex-direction: column;
     /* text-align: center; */
     border: solid;
     border-width: 1px;
@@ -30,7 +33,7 @@ form {
   }
 
   input {
-    background-color: burlywood;
+    background-color: bisque;
     box-shadow: inset 3px 4px 5px cadetblue;
     border: solid;
     border-width: 1px;
