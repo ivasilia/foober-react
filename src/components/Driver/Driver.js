@@ -1,16 +1,36 @@
 import style from './Driver';
+import { host } from '../../common/constants';
+import { useState, useRouteMatch, useContext } from 'react';
+// import { useCookies } from 'react-cookie';
 import { Link } from 'react-router-dom';
-import Init from '../Init/Init';
 import RegForm from '../RegForm';
+import AuthContext from '../context/AuthContext';
+import DriverLogin from './DriverLogin';
+import NewSharedRoute from '../../components/Route/NewSharedRoute';
+import DriverDashboard from '../../components/DriverDashboard';
+import LoginForm from '../Forms/LoginForm';
+import SharedRoute from '../../components/Route';
 
-const Driver = () => {
-    return(
-        <div className="form-container">
-            <Link to="/driver/login"><Init text="Have an account? Drive in!" /></Link>
-            <p>Otherwise register:</p>
-            <RegForm />
-        </div>
-    )
+const Driver = ({
+    match
+}) => {
+
+    const context = useContext(AuthContext);
+
+    console.log('Here Driver:');
+    console.log(context);
+    console.log(match);
+
+    if (sessionStorage.getItem('logged') == 'true') {    // ---- 'true' as string!!! ----
+        return <DriverDashboard userId={match.params.id} />;
+
+    } else {
+        return <LoginForm />;
+    }
+
+
 }
+
+// DriverLogin.contextType = AuthContext;
 
 export default Driver;

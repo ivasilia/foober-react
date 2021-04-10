@@ -58,9 +58,9 @@ body {
   /* margin-top: 8%; */
   margin-left: 30%;
   width: 40%;
-  border: dashed;
-  border-width: 1px 4px;
-  border-radius: 40px;
+  border: solid;
+  border-width: 1px;
+  border-radius: 15px;
   border-color: aquamarine;
   background:
   radial-gradient(rgb(43, 43, 43) 15%, transparent 16%) 0 0,

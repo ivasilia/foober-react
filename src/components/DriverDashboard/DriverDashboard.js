@@ -2,6 +2,7 @@ import './DriverDashboard.css';
 import { host } from '../../common/constants';
 import { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import AuthContext from '../context/AuthContext';
 
 class DriverDashboard extends Component {
     constructor(props) {
@@ -19,9 +20,14 @@ class DriverDashboard extends Component {
     }
 
     componentDidMount() {
-        const driverId = this.props.match.params.id;
+        console.log('Dashboard loading...');
+        console.log(sessionStorage.getItem('userId'));
+        let driverId = sessionStorage.getItem('userId');
+        console.log(driverId); 
 
-        fetch(`${host}/drivers/${driverId}`)
+        fetch(
+            `${host}/drivers/${driverId}`
+            )
             .then(res => res.json())
             .then(data => {
                 this.setState( prevState => {
@@ -40,8 +46,10 @@ class DriverDashboard extends Component {
     }
 
 
-
     render() {
+        console.log(this.context.token);
+        console.log(this.context.user.id);
+        if (true) {
         return (
             <div className="dashboard">
                 <h2>Foober Driver's Dashboard</h2>
@@ -69,7 +77,10 @@ class DriverDashboard extends Component {
                 <h4>Estimated travel cost with -- passengers: </h4>
             </div>
         );
+                    }
     }
 }
+
+DriverDashboard.contextType = AuthContext;
 
 export default DriverDashboard;

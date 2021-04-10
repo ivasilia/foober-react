@@ -13,23 +13,25 @@ const RegForm = (props) => {
 
     // TODO ---- 
 
-    async function registerDriver() {
+    async function registerDriver(e) {
+        e.preventDefault();
         await fetch(`${host}/drivers/register?
-            username=${props.location.username}
-            &password=${props.location.password}
-            &model=${props.location.model}
-            &fuel=${props.location.fuel}
-            &consumption=${props.location.consumption}`, {
+            username=${username}
+            &password=${password}
+            &model=${model}
+            &fuel=${fuel}
+            &consumption=${consumption}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             }
         })
+        .then(res => res.json())
         .then(data => console.log(data));
     }
 
     return (
-        <form onSubmit={registerDriver}>
+        <form>
             <div className={style.inputField}>
                 <label htmlFor="username">Username</label>
                 <input id="username" name={setUsername} type="text" />
@@ -56,7 +58,7 @@ const RegForm = (props) => {
             </div>
             <div>
                 <label htmlFor="submit-button">Register</label>
-                <input id="submit-button" type="submit" className="submitButton" />
+                <input id="submit-button" type="submit" className="submitButton" onClick={registerDriver} />
             </div>
         </form>
     )
