@@ -18,7 +18,7 @@ const Header = () => {
                 <li><Link to="/about">about foober</Link></li>
                 <li><Link to="/login">login</Link></li>
                 <li><Link to="/register">register</Link></li>
-                <li><Link to="/" onClick={logout}>logout</Link></li>
+                <li><Link to="/driver" onClick={logout}>logout</Link></li>
             </ul>
         </div>
     );

@@ -23,7 +23,5 @@ const LoginForm = () => {
     );
 }
 
-// LoginForm.contextType = AuthContext;
-
 
 export default LoginForm;

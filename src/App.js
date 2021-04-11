@@ -26,7 +26,6 @@ class App extends Component {
     this.state = {
       token: '',
       user: {},
-      isLogged: false,
       onSubmitHandler: this.onSubmitHandler
     };
 
@@ -51,7 +50,6 @@ class App extends Component {
         this.setState({ user: user });
         sessionStorage.setItem('userId', user.id);
         sessionStorage.setItem('logged', true);
-        // this.setState({isLogged: true})
       });
 
       console.log('App - onSubmitHandler done. Logged in: ');
