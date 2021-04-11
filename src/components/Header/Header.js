@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 
     function logout(e) {
-        e.preventDefault();
+        // e.preventDefault();
         sessionStorage.setItem('logged', false)
     }
 
