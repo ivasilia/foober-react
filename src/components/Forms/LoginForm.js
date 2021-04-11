@@ -9,7 +9,6 @@ const LoginForm = () => {
 
     return (
         <div>
-            <p>{context.token}</p>
             <form onSubmit={context.onSubmitHandler}>
                 <label htmlFor="username">Enter username</label>
                 <input type="text" id="username" name="username" />
