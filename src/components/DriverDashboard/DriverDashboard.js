@@ -58,7 +58,7 @@ class DriverDashboard extends Component {
                         <div className="box">
                             <Image
                                 cloudName="duvtwfpom" 
-                                publicId="https://res.cloudinary.com/duvtwfpom/image/upload/v1598873534/samples/mofa/images/elgreco_portrait_of_a_man_thumbnail.jpg"
+                                publicId="https://res.cloudinary.com/duvtwfpom/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_20,b_rgb:262c35/v1598873534/samples/mofa/images/elgreco_portrait_of_a_man_thumbnail.jpg"
                                   width="150" height="150" gravity="face" crop="scale" >
                             </Image>
                         </div>
