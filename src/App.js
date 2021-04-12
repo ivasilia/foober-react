@@ -51,9 +51,6 @@ class App extends Component {
         sessionStorage.setItem('userId', user.id);
         sessionStorage.setItem('logged', true);
       });
-
-      console.log('App - onSubmitHandler done. Logged in: ');
-      console.log(this.state.isLogged);
   }
 
   render() {
