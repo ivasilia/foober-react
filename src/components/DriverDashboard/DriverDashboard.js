@@ -12,6 +12,7 @@ class DriverDashboard extends Component {
             driver: {
                 id: 1,
                 name: '',
+                imageurl: '',
                 model: '',
                 fuel: '',
                 consumption: 0
@@ -35,6 +36,7 @@ class DriverDashboard extends Component {
                     let driver = Object.assign({}, prevState.driver);
                     driver.id = data.id;
                     driver.name = data.name;
+                    driver.imageUrl = data.imageUrl;
                     driver.model = data.model;
                     driver.fuel = data.fuel;
                     driver.consumption = data.consumption;
@@ -48,8 +50,6 @@ class DriverDashboard extends Component {
 
 
     render() {
-        console.log(this.context.token);
-        console.log(this.context.user.id);
         if (true) {
             return (
                 <div className="dashboard">
@@ -58,7 +58,7 @@ class DriverDashboard extends Component {
                         <div className="box">
                             <Image
                                 cloudName="duvtwfpom" 
-                                publicId="https://res.cloudinary.com/duvtwfpom/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_20,b_rgb:262c35/v1598873534/samples/mofa/images/elgreco_portrait_of_a_man_thumbnail.jpg"
+                                publicId={this.state.imageUrl}
                                   width="150" height="150" gravity="face" crop="scale" >
                             </Image>
                         </div>
