@@ -6,18 +6,24 @@
     font-size: 26px;
 }
 
-.segment-wrapper {
+.about-container article {
+    margin-top: 30px;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: 200;
+}
+
+/* .segment-wrapper {
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 
-}
+} */
 
 .segment {
-    display: block;
-    width: 250px;
-    border: 1px solid aquamarine;
+    justify-content: center;
+    width: 85vw;
+    /* border: 1px solid aquamarine; */
     margin: 1vw;
     border-radius: 5px;
     border-bottom-right-radius: 30px;

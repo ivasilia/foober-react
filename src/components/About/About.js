@@ -1,20 +1,47 @@
+import { useEffect, useState } from 'react';
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import { host } from '../../common/constants';
+import Comment from '../Comment';
 import './About.css';
 
 const About = () => {
-    return ( 
+
+    const [comments, setComments] = useState([]);
+
+    useEffect(async () => {
+        await fetch(`${host}/comments/all`)
+            .then(res => res.json())
+            .then(data => setComments(data))
+    });
+
+
+
+    return (
         <div className="about-container">
             <p>Why share a route with Foober? Here's why:</p>
-            <div className="segment-wrapper">
+            <Tabs>
+                <TabList>
+                    <Tab>Why Foober</Tab>
+                    <Tab>Statistics</Tab>
+                    <Tab>Comments</Tab>
+                </TabList>
+
+                <TabPanel>
+                    <article>It's like Uber, but not yet prohibited by law...</article>
+                </TabPanel>
+                <TabPanel>
+                    <article> We have great statistict... </article>
+                </TabPanel>
+                <TabPanel>
                 <div className="segment">
-                    About page
-            </div>
-                <div className="middle segment">
-                    About page
-            </div>
-                <div className="segment">
-                    About page
-            </div>
-            </div>
+                    <p>Comments</p>
+                    {comments.map(c => {
+                        return <Comment key={c.id} title={c.title} content={c.content} />
+                    })}
+                </div>
+                </TabPanel>
+            </Tabs>
         </div>
     );
 }
