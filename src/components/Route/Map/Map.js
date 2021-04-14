@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
-import { googleApiKey } from '../../common/constants'
+import { googleApiKey } from '../../../common/constants'
 import Marker from './Marker';
 
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
