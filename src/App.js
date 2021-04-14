@@ -34,7 +34,7 @@ class App extends Component {
 
 
   onSubmitHandler(e) {
-    e.preventDefault();
+    // e.preventDefault();
     console.log(`App - OnSubmit fired for: ${e.target.username.value}`);
     fetch(`${host}/api/login?username=${e.target.username.value}&password=${e.target.password.value}`, {
       method: 'POST',
