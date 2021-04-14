@@ -1,1 +1,1 @@
-export {default} from './SharedRoute';
+export {default} from './PickRoute';

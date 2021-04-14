@@ -9,7 +9,7 @@ const Header = () => {
     }
 
 
-    return (
+    return (            // ---- TODO re-render on logout -----
 
         <div>
             <ul className="header">
@@ -33,10 +33,10 @@ const Header = () => {
                         (<li><Link to="/login">login</Link></li>)
                 }
                 {
-                    sessionStorage.getItem('logged') === 'true' ?
-                        null
-                        :
-                        (<li><Link to="/register">register</Link></li>)
+                    sessionStorage.getItem('logged') === 'false' ?
+                    (<li><Link to="/register">register</Link></li>)
+                    :
+                    null
                 }
                 {
                     sessionStorage.getItem('logged') === 'true' ?

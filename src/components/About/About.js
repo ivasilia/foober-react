@@ -31,7 +31,7 @@ const About = () => {
                     <article>It's like Uber, but not yet prohibited by law...</article>
                 </TabPanel>
                 <TabPanel>
-                    <article> We have great statistict... </article>
+                    <article>-- 1 555 666 777 have joint Foober by today! -- </article>
                 </TabPanel>
                 <TabPanel>
                 <div className="segment">

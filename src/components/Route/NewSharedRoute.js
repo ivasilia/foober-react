@@ -2,7 +2,7 @@ import { host } from '../../common/constants';
 import { useEffect, useState } from 'react';
 import './Route.css';
 
-const NewSharedRoute = (props) => {
+const SharedRoute = (props) => {
     console.log(props.location.origcity);
 
     const { data, setData } = useState([]);
@@ -31,4 +31,4 @@ return (
     }
 
 
-export default NewSharedRoute;
+export default SharedRoute;

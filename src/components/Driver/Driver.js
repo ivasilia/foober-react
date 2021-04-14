@@ -1,20 +1,23 @@
 import style from './Driver';
 import { useState, useRouteMatch, useContext } from 'react';
-import AuthContext from '../context/AuthContext';
 import DriverDashboard from '../../components/DriverDashboard';
 import LoginForm from '../Forms/LoginForm';
+import { Link } from 'react-router-dom';
 
 const Driver = ({
     match
 }) => {
 
-    const context = useContext(AuthContext);
-
     if (sessionStorage.getItem('logged') == 'true') {    // ---- 'true' as string!!! ----
         return <DriverDashboard userId={match.params.id} />;
 
     } else {
-        return <LoginForm />;
+        return (
+            <>
+            <LoginForm />
+            <Link to="/drivers/register" ><h4>Have no account yet! Sign up!</h4></Link>
+            </>
+        );
     }
 
 

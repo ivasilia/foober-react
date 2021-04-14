@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { host } from '../../common/constants';
 import style from './Form.css';
 
-const RegForm = (props) => {
+const RegDriverForm = (props) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [rePassword, setRePassword] = useState('');
+    const [imageUrl, setImageUrl] = useState('');
     const [model, setModel] = useState('');
     const [fuel, setFuel] = useState('');
     const [consumption, setConsumption] = useState('');
 
-    // TODO ---- 
 
     async function registerDriver(e) {
         e.preventDefault();
@@ -29,7 +29,7 @@ const RegForm = (props) => {
         .then(data => console.log(data));
     }
 
-    return (
+    return (  
         <form>
             <div className={style.inputField}>
                 <label htmlFor="username">Username</label>
@@ -42,6 +42,10 @@ const RegForm = (props) => {
             <div>
                 <label htmlFor="rePassword">Retype password</label>
                 <input id="rePassword" name={setRePassword} type="password" />
+            </div>
+            <div>
+                <label htmlFor="imageUrl">Image URL</label>
+                <input id="imageUrl" name={setImageUrl} type="text" />
             </div>
             <div className={style.inputField}>
                 <label htmlFor="model">Car model</label>
@@ -63,4 +67,4 @@ const RegForm = (props) => {
     )
 }
 
-export default RegForm;
+export default RegDriverForm;

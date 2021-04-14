@@ -7,16 +7,18 @@ import Landing from './components/Init/Landing';
 import Header from './components/Header/Header';
 import Footer from './components/Footer';
 import About from './components/About';
+import Login from './components/Forms/LoginForm';
 import Driver from './components/Driver';
-import DriverLogin from './components/Driver/DriverLogin';
+import RegDriverForm from './components/Forms/RegDriverForm';
 import DriverDashboard from './components/DriverDashboard';
 import Passenger from './components/Passenger';
+import RegPassengerForm from './components/Forms/RegPassengerForm';
 import PassengerDashboard from './components/Passenger/PassengerDashboard';
-import SharedRoute from './components/Route';
+import PickRoute from './components/Route';
 import NewSharedRoute from './components/Route/NewSharedRoute';
+import SharedRoute from './components/Route/SharedRoute';
 import AllRoutes from './components/Route/AllRoutes';
 
-import Login from './components/Login/Login';
 
 class App extends Component {
 
@@ -31,7 +33,6 @@ class App extends Component {
 
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
   }
-
 
   onSubmitHandler(e) {
     // e.preventDefault();
@@ -68,14 +69,17 @@ class App extends Component {
             <Route path="/about" component={About} />
             <Route path="/driver" component={Driver } exact />
             <Route path="/passenger" component={Passenger} exact />
-            <Route path="/login" id={this.state.user.id} component={Driver} exact />
-            <Route path="/login/test-login" component={Login} />
-            <Route path="/driver/login" component={DriverLogin} exact />
-            <Route path="/driver/dashboard/:id" component={DriverDashboard} />
-            <Route path="/routes/new" component={SharedRoute} />
+            <Route path="/login" id={this.state.user.id} component={Login} exact />
+            <Route path="/drivers" component={Driver} exact />
+            <Route path="/drivers/register" component={RegDriverForm} />
+            <Route path="/drivers/dashboard/:id" component={DriverDashboard} />
+            <Route path="/routes/new" component={PickRoute} />
             <Route path="/routes/created" component={NewSharedRoute} />
             <Route path="/routes/all" component={AllRoutes} exact />
-            <Route path="/passenger/dashboard" component={PassengerDashboard} />
+            <Route path="/routes/:id" component={SharedRoute} />
+            <Route path="/passengers" component={Passenger} exact />
+            <Route path="/passengers/register" component={RegPassengerForm} />
+            <Route path="/passengers/dashboard/:id" component={PassengerDashboard} />
           </Switch>
         </AuthContext.Provider>
         <Footer />
