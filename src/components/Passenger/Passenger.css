@@ -32,6 +32,15 @@
     box-shadow: 5px 3px 3px rgb(18, 49, 97);
 }
 
+.oval-div {
+    margin-right: 20px;
+    border: 1px solid aquamarine;
+    background-color: rgb(67, 107, 167);
+    border-radius: 150px 75px;
+    padding: 6px;
+    box-shadow: 5px 3px 3px rgb(18, 49, 97);
+}
+
 .box button {
     font-size: 18px;
     display: block;
