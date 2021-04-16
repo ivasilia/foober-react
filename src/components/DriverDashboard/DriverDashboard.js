@@ -23,9 +23,8 @@ class DriverDashboard extends Component {
 
     componentDidMount() {
         console.log('Dashboard loading...');
-        console.log(sessionStorage.getItem('userId'));
         let driverId = sessionStorage.getItem('userId');
-        console.log(driverId);
+        sessionStorage.setItem('userType', 'driver');       // ---- Set user type after login: driver
 
         fetch(
             `${host}/drivers/${driverId}`
@@ -70,8 +69,8 @@ class DriverDashboard extends Component {
                         </div>
                         <div className="box">
                             <Link to="/routes/new"><button>Create new route</button></Link>
-                            <Link to="/routes/:id"><button>Use existing route</button></Link>
-                            <Link to="/routes/delete"><button>Delete all routes</button></Link>
+                            {/* <Link to="/routes/:id"><button>Use existing route</button></Link> */}
+                            <Link to="/routes/delete"><button>Delete my routes</button></Link>
                         </div>
                         <div className="box">
                             <p>Your last passengers:</p>
