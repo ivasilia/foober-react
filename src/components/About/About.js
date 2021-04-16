@@ -9,11 +9,14 @@ const About = () => {
 
     const [comments, setComments] = useState([]);
 
-    useEffect(async () => {
+    useEffect(() => {
+        async function fetchData() {
         await fetch(`${host}/comments/all`)
             .then(res => res.json())
-            .then(data => setComments(data))
-    });
+            .then(data => setComments(data));
+        }
+        fetchData();
+    }, []);
 
 
 
@@ -31,7 +34,8 @@ const About = () => {
                     <article>It's like Uber, but not yet prohibited by law...</article>
                 </TabPanel>
                 <TabPanel>
-                    <article>-- 1 555 666 777 have joint Foober by today! -- </article>
+                    <article><h3>-- 1 555 666 777 have joint Foober by today! -- </h3></article>
+                    <img src="https://res.cloudinary.com/duvtwfpom/image/upload/v1598646358/samples/sheep.jpg" className="image-wrapper"/>
                 </TabPanel>
                 <TabPanel>
                 <div className="segment">
