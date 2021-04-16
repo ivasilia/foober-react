@@ -16,6 +16,10 @@
     background-color: blanchedalmond;
 }
 
+.image-wrapper {
+    width: 70%;
+}
+
 /* .segment-wrapper {
     display: flex;
     justify-content: center;
