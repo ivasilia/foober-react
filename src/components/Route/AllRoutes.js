@@ -27,7 +27,7 @@ const AllRoutes = () => {
                     routes.map(r => {
                         return (
                             <li key={r.id}>
-                                <Link to={`/routes/${r.id}`}>
+                                <Link to={`/routes/${r.id}`} >
                                     <div className="list-item">
                                         <p>{r.origin} - {r.destination}</p>
                                         <small>Distance: {r.distance} km, </small>
