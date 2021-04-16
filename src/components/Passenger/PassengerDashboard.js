@@ -11,13 +11,12 @@ class PassengerDashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            driver: {
+            passenger: {
                 id: 1,
                 name: '',
                 imageurl: '',
-                model: '',
-                fuel: '',
-                consumption: 0
+                registrationDate: '',
+                bonusPoints: 0
             },
             errors: [],
         }
@@ -27,12 +26,14 @@ class PassengerDashboard extends Component {
     componentDidMount() {
         let passengerId = sessionStorage.getItem('userId');
         console.log(`Passenger Dashboard loading for: ${passengerId}`);
+        sessionStorage.setItem('userType', 'passenger');       // ---- Set user type after login: passenger
 
         fetch(
             `${host}/passengers/${passengerId}`
         )
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 this.setState(prevState => {
                     let passenger = Object.assign({}, prevState.passenger);
                     passenger.id = data.id;
@@ -53,9 +54,9 @@ class PassengerDashboard extends Component {
                 <h2>Foober Passenger's Dashboard</h2>
                 <section>
                     <div className="box">
-                        <p>Passenger: </p>
-                        <p>First registration: </p>
-                        <p>Bonus points: </p>
+                        <p>Passenger: {this.state.name}</p>
+                        <p>First registration: {this.state.registrationDate}</p>
+                        <p>Bonus points: { this.state.bonusPoints}</p>
                     </div>
                     <div className="box">
                         <Link to="/routes/all"><button>Pick avaiable route</button></Link>
@@ -69,7 +70,7 @@ class PassengerDashboard extends Component {
                         })
                     } */}
                     </div>
-                    <div className="box">
+                    <div className="oval-div">
                         <Image
                             cloudName="duvtwfpom"
                             publicId={this.state.imageUrl}
