@@ -3,8 +3,11 @@ import './Comment.css';
 const Comment = (props) => {
     return (
         <li className="list-item">
-            <p>{props.title}</p>
+            <div> 
+                <p>{props.title}</p>
             <span>{props.content}</span>
+            </div>
+            
         </li>
     );
 }
